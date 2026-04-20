@@ -1,5 +1,17 @@
 {
   "name": "devops-express",
   "version": "1.0.0",
-  "description": "Projeto de estudo de DevOps com Node.js e Express"
+  "description": "Projeto de estudo de DevOps com Node.js e Express",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest --forceExit"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
 }
