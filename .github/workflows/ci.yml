@@ -25,3 +25,11 @@ jobs:
 
       - name: Executar testes
         run: npm test
+
+      - name: Notificar Discord
+        if: always()
+        uses: Ilshidur/action-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: "**[${{ github.repository }}]** CI ${{ job.status == 'success' && '✅ passou' || '❌ falhou' }} | Branch: `${{ github.ref_name }}` | Commit: `${{ github.sha }}`"
